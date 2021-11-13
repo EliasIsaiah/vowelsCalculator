@@ -3,6 +3,7 @@
 	let numberOfVowels = 0;
 	let percentageOfWordThatIsVowels = String.fromCodePoint(0x1f47b);
 	const precision = 4;
+	const vowels = ["a", "e", "i", "o", "u"];
 
 	function preciseString(x) {
 		return Number.parseFloat(x).toPrecision(precision).toString() + "%";
@@ -29,8 +30,6 @@
 		word = e.target.value;
 		calculateVowels();
 	}
-
-	const vowels = ["a", "e", "i", "o", "u"];
 </script>
 
 <div class="flexContainer">
@@ -48,7 +47,7 @@
 		<h3 class="grayText marginTop">number of vowels:</h3>
 		<h3 class="result">{numberOfVowels}</h3>
 
-		<h3 class="grayText marginTop">percentage</h3>
+		<h3 class="grayText marginTop">percentage:</h3>
 		<h3 class="result">{percentageOfWordThatIsVowels}</h3>
 	</div>
 </div>
@@ -80,7 +79,6 @@
 	.marginTop {
 		margin-top: 20px;
 	}
-
 	.wordInput {
 		display: flex;
 		margin: auto;
