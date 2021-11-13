@@ -34,9 +34,9 @@
 </script>
 
 <div class="flexContainer">
-    <h1>Vowel Counter</h1>
+    <h1>vowel counter</h1>
     <div class="gray">
-        <h3 class="grayText">Enter your word here:</h3>
+        <h3 class="grayText">enter your word here:</h3>
         <input
             class="wordInput"
             type="text"
@@ -45,10 +45,10 @@
             placeholder="your word here!"
             on:keyup={handleWordChange}
         />
-        <h3 class="grayText marginTop">Number of vowels:</h3>
+        <h3 class="grayText marginTop">number of vowels:</h3>
         <h3 class="result">{numberOfVowels}</h3>
 
-        <h3 class="grayText marginTop">Percentage</h3>
+        <h3 class="grayText marginTop">percentage</h3>
         <h3 class="result">{percentageOfWordThatIsVowels}</h3>
     </div>
 </div>
