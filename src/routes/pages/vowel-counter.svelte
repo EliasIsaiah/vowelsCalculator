@@ -12,14 +12,18 @@
 
     function calculateVowels() {
         numberOfVowels = 0;
+        let numberOfSpaces = 0;
+        let numberOfChars = word.length;
         let chars = word.split("");
         for (const char of chars) {
-            if (vowels.includes(char)) {
-                numberOfVowels++;
-            }
+            if (vowels.includes(char)) numberOfVowels++;
+            if (char === " ") numberOfSpaces++;
         }
+
+        numberOfChars = numberOfChars - numberOfSpaces;
+
         percentageOfWordThatIsVowels = preciseString(
-            (numberOfVowels / word.length) * 100
+            (numberOfVowels / numberOfChars) * 100
         );
 
         if (isNaN(parseFloat(percentageOfWordThatIsVowels))) {
