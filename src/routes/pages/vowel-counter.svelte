@@ -79,6 +79,7 @@
         padding: 10px;
         border-radius: 12px;
         text-align: center;
+        color: black;
     }
     .marginTop {
         margin-top: 20px;
@@ -91,5 +92,11 @@
     }
     .result {
         text-align: center;
+    }
+
+    .gray {
+        background-color: #e6e6e633;
+        padding: 20px;
+        border-radius: 12px;
     }
 </style>
