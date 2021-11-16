@@ -1,6 +1,4 @@
 <script lang="ts">
-    import Button, { Label } from "@smui/button";
-
     let lightTheme =
         typeof window === "undefined" ||
         window.matchMedia("(prefers-color-scheme: light)").matches;
@@ -20,15 +18,16 @@
     }
 </script>
 
+<h1>Test text</h1>
 <div class="container">
     <nav>
         <a href="/">home</a>
         <a href="/pages/about">about</a>
         <a href="/pages/vowel-counter">vowel counter</a>
     </nav>
-    <Button on:click={switchTheme}>
-        <Label>{lightTheme ? "Lights off" : "Lights on"}</Label>
-    </Button>
+    <button on:click={switchTheme}>
+        {lightTheme ? "Lights off" : "Lights on"}
+    </button>
 </div>
 
 <style>

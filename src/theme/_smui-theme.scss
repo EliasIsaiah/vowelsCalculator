@@ -8,8 +8,11 @@
 
 html,
 body {
-  background-color: theme.$surface;
-  color: theme.$on-surface;
+  background: linear-gradient(0.25turn, #e66465, #9198e5);
+  font-family: Helvetica, sans-serif;
+  // background-color: theme.$surface;
+  // color: theme.$on-surface;
+  color: black;
 }
 
 a {
