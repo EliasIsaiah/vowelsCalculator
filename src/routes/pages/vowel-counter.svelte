@@ -62,11 +62,6 @@
 </div>
 
 <style>
-    .gray {
-        background-color: rgba(230, 230, 230, 0.2);
-        padding: 20px;
-        border-radius: 12px;
-    }
     .flexContainer {
         display: flex;
         justify-content: center;
@@ -96,9 +91,5 @@
     }
     .result {
         text-align: center;
-    }
-
-    :global(body) {
-        background: linear-gradient(0.25turn, #e66465, #9198e5);
     }
 </style>
