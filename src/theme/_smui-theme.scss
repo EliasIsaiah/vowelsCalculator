@@ -1,25 +1,38 @@
-@use 'sass:color';
+@use "sass:color";
 
-@use '@material/theme/color-palette';
+@use "@material/theme/color-palette";
 
 // Svelte Colors!
-@use '@material/theme/index' as theme with (
-  $primary: #ff3e00,
-  $secondary: #676778,
-  $surface: #fff,
-  $background: #fff,
-  $error: color-palette.$red-900,
-);
+@use "@material/theme/index" as theme with
+  ($primary: #ff3e00, $secondary: #676778, $surface: #fff, $background: #fff, $error: color-palette.$red-900);
 
 html,
 body {
-  background-color: theme.$surface;
-  color: theme.$on-surface;
+  background: linear-gradient(0.25turn, #e66465, #9198e5);
+  font-family: Helvetica, sans-serif;
+  // background-color: theme.$surface;
+  // color: theme.$on-surface;
+  color: black;
 }
 
 a {
-  color: #40b3ff;
+  color: white;
+  font-size: 2em;
+  margin-right: 10px;
+  padding: 10px;
 }
-a:visited {
-  color: color.scale(#40b3ff, $lightness: -35%);
+a:hover {
+  color: cyan;
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+}
+a:active {
+  color: black;
+  background-color: white;
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+}
+
+nav > * {
+  text-decoration: none;
 }

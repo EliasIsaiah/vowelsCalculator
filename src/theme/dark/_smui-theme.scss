@@ -1,25 +1,46 @@
-@use 'sass:color';
+@use "sass:color";
 
-@use '@material/theme/color-palette';
+@use "@material/theme/color-palette";
 
 // Svelte Colors! (Dark Theme)
-@use '@material/theme/index' as theme with (
-  $primary: #ff3e00,
-  $secondary: color.scale(#676778, $whiteness: -10%),
-  $surface: color.adjust(color-palette.$grey-900, $blue: +4),
-  $background: #000,
-  $error: color-palette.$red-700
-);
+@use "@material/theme/index" as theme with
+  (
+    $primary: #ff3e00,
+    $secondary: color.scale(#676778, $whiteness: -10%),
+    $surface: color.adjust(color-palette.$grey-900, $blue: +4),
+    $background: #000,
+    $error: color-palette.$red-700
+  );
+
+  $gradient: linear-gradient(0.25turn, #e66465, #9198e5);
 
 html,
 body {
-  background-color: #000;
-  color: theme.$on-surface;
+  font-family: Helvetica, sans-serif;
+  background: linear-gradient(0.25turn, #e66465, #9198e5);
+  // background-color: theme.$surface; 
+  // color: theme.$on-surface;
+  color: white;
 }
 
 a {
-  color: #40b3ff;
+  color: white;
+  font-size: 2em;
+  margin-right: 10px;
+  padding: 10px;
 }
-a:visited {
-  color: color.scale(#40b3ff, $lightness: -35%);
+a:hover {
+  color: cyan;
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+}
+a:active {
+  color: black;
+  background-color: white;
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+}
+
+nav > * {
+  text-decoration: none;
 }
