@@ -1,1 +1,1 @@
-<h1>About</h1>
+<div class="mdc-typography--headline1">About Me</div>
