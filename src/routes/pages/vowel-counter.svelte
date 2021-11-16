@@ -2,6 +2,8 @@
     let word = "";
     let numberOfVowels = 0;
     let percentageOfWordThatIsVowels = String.fromCodePoint(0x1f47b);
+    const vowels = ["a", "e", "i", "o", "u"];
+
     const precision = 4;
 
     function preciseString(x) {
@@ -10,14 +12,18 @@
 
     function calculateVowels() {
         numberOfVowels = 0;
+        let numberOfSpaces = 0;
+        let numberOfChars = word.length;
         let chars = word.split("");
         for (const char of chars) {
-            if (vowels.includes(char)) {
-                numberOfVowels++;
-            }
+            if (vowels.includes(char)) numberOfVowels++;
+            if (char === " ") numberOfSpaces++;
         }
+
+        numberOfChars = numberOfChars - numberOfSpaces;
+
         percentageOfWordThatIsVowels = preciseString(
-            (numberOfVowels / word.length) * 100
+            (numberOfVowels / numberOfChars) * 100
         );
 
         if (isNaN(parseFloat(percentageOfWordThatIsVowels))) {
@@ -29,9 +35,11 @@
         word = e.target.value;
         calculateVowels();
     }
-
-    const vowels = ["a", "e", "i", "o", "u"];
 </script>
+
+<svelte:head>
+    <title>Vowel Counter</title>
+</svelte:head>
 
 <div class="flexContainer">
     <h1>vowel counter</h1>
@@ -48,17 +56,12 @@
         <h3 class="grayText marginTop">number of vowels:</h3>
         <h3 class="result">{numberOfVowels}</h3>
 
-        <h3 class="grayText marginTop">percentage</h3>
+        <h3 class="grayText marginTop">percentage:</h3>
         <h3 class="result">{percentageOfWordThatIsVowels}</h3>
     </div>
 </div>
 
 <style>
-    .gray {
-        background-color: rgb(230, 230, 230);
-        padding: 20px;
-        border-radius: 12px;
-    }
     .flexContainer {
         display: flex;
         justify-content: center;
@@ -72,10 +75,11 @@
     }
     .grayText {
         margin-top: 0px;
-        background-color: rgb(200, 200, 200);
+        background-color: rgba(200, 200, 200, 0.8);
         padding: 10px;
         border-radius: 12px;
         text-align: center;
+        color: black;
     }
     .marginTop {
         margin-top: 20px;
@@ -88,5 +92,11 @@
     }
     .result {
         text-align: center;
+    }
+
+    .gray {
+        background-color: #e6e6e633;
+        padding: 20px;
+        border-radius: 12px;
     }
 </style>
